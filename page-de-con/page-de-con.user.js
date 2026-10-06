@@ -57,25 +57,47 @@
     // Sections répétables : clé = titre de la section (normalisé), valeur = liste de lignes.
     // Si tu mets plus de lignes que la page n'en a, le script clique sur "Ajouter".
     sections: {
+      // Dates laissées vides : le CV ne donne que les années et les champs date sont facultatifs.
       'experience professionnelle actuelle': [
         [
-          [/^nom de l.entreprise/, ''], // ← à remplir
-          [/^date de debut/, ''], // format attendu par le site, ex. '01/09/2020'
-          [/^famille d.emploi/, ['Maintenance', 'Manufacturing', 'Operations', 'Engineering', 'Others']],
-          [/^titre/, ''], // ← à remplir
+          [/^nom de l.entreprise/, 'UPS'],
+          [/^date de debut/, ''],
+          [/^famille d.emploi/, ['Project Management', 'Gestion de projet', 'Engineering', 'Ingénierie', 'Operations', 'Others']],
+          [/^titre/, 'Alternant ingénieur projet'],
           [/^pays/, 'France'],
-          [/^etat\/province/, ''],
-          [/^ville/, ''],
+          [/^etat\/province/, 'Val-de-Marne'],
+          [/^ville/, 'Charenton-le-Pont'],
         ],
       ],
-      'experience professionnelle precedente': [],
+      'experience professionnelle precedente': [
+        [
+          [/^nom de l.entreprise/, 'TERREAL'],
+          [/^famille d.emploi/, ['Maintenance', 'Engineering', 'Ingénierie', 'Manufacturing', 'Others']],
+          [/^titre/, 'Alternant ingénieur méthode maintenance'],
+          [/^pays/, 'France'],
+          [/^etat\/province/, 'Yvelines'],
+          [/^ville/, 'Les Mureaux'],
+        ],
+        [
+          [/^nom de l.entreprise/, 'BMI MONIER'],
+          [/^famille d.emploi/, ['Project Management', 'Gestion de projet', 'Engineering', 'Manufacturing', 'Others']],
+          [/^titre/, 'Alternant technicien projet'],
+          [/^pays/, 'France'],
+          [/^etat\/province/, 'Vosges'],
+          [/^ville/, 'Saint-Nabord'],
+        ],
+      ],
       "niveau d'education": [
         [
-          [/^date de debut/, ''],
-          [/^date de fin/, ''],
-          [/^ecole\/universite/, ''],
-          [/^niveau de formation/, ''], // ex. ['Master', 'Bac+5']
-          [/^field of study/, ''], // ex. ['Engineering', 'Ingénierie']
+          [/^ecole\/universite/, 'Université Paris-Est Créteil'],
+          [/^niveau de formation/, ['Master', 'Bac+5', 'Bac +5', 'Graduate']],
+          [/^field of study/, ['Industrial Engineering', 'Génie industriel', 'Engineering', 'Ingénierie', 'Maintenance']],
+          [/^pays/, 'France'],
+        ],
+        [
+          [/^ecole\/universite/, 'IUT Hubert Curien Epinal'],
+          [/^niveau de formation/, ['Licence', 'Bachelor', 'Bac+3', 'Bac +3']],
+          [/^field of study/, ['Maintenance', 'Industrial Engineering', 'Engineering', 'Ingénierie']],
           [/^pays/, 'France'],
         ],
       ],
@@ -84,6 +106,10 @@
         [
           [/^langue/, ['Français', 'French']],
           [/^niveau/, ['Langue maternelle', 'Natif', 'Native', 'Bilingue']],
+        ],
+        [
+          [/^langue/, ['Anglais', 'English']],
+          [/^niveau/, ['B2', 'Intermédiaire supérieur', 'Upper intermediate', 'Courant', 'Avancé', 'Intermédiaire']],
         ],
       ],
     },
